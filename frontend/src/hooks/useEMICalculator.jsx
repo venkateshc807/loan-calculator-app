@@ -4,13 +4,13 @@ const useEMICalculator = () => {
   const [emiResult, setEmiResult] = useState(null);
   const [error, setError] = useState('');
 
-  // Function to calculate EMI
+
   const calculateEMI = (loanAmount, interestRate, loanTerm) => {
     const principal = parseFloat(loanAmount);
     const annualRate = parseFloat(interestRate);
     const months = parseInt(loanTerm);
 
-    // Validate inputs
+
     if (!principal || !annualRate || !months || principal <= 0 || annualRate <= 0 || months <= 0) {
       setError('Please enter valid positive numbers for all fields.');
       setEmiResult(null);
@@ -19,7 +19,7 @@ const useEMICalculator = () => {
 
     setError('');
     
-    // EMI Calculation Logic
+
     const monthlyRate = annualRate / 12 / 100;
     const emi =
       (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// Custom hook to fetch exchange rates
+
 const useExchangeRate = (baseCurrency, targetCurrencies) => {
   const [exchangeRate, setExchangeRate] = useState({});
   const [loading, setLoading] = useState(true);
@@ -10,7 +10,7 @@ const useExchangeRate = (baseCurrency, targetCurrencies) => {
     const fetchExchangeRates = async () => {
       setLoading(true);
       try {
-        // Constructing the API URL dynamically to fetch rates for the base currency
+
         const response = await fetch(
           `https://v6.exchangerate-api.com/v6/abfb8bfd47e5c54ce33b258e/latest/${baseCurrency}`
         );

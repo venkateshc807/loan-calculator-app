@@ -11,16 +11,15 @@ import {
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 import { useAppTheme, useCurrency } from '../context/AppContext';
 
 const Navbar = () => {
   const muiTheme = useTheme();
   const { theme, toggleTheme } = useAppTheme();
   const { currency, changeCurrency } = useCurrency();
-  const navigate = useNavigate(); // Get navigate function
+  const navigate = useNavigate(); 
 
-  // Navigate to Not Found page
   const handleGoToNotFound = () => {
     navigate('/notfound');
   };
@@ -46,16 +45,16 @@ const Navbar = () => {
             {currency}
           </Button>
 
-          {/* Button to go to Not Found page with a contrasting background */}
+
           <Button
             variant="contained"
-            color="error" // Using Material UI's 'error' color for a strong contrast
+            color="error" 
             onClick={handleGoToNotFound}
             sx={{
               ml: 2,
-              backgroundColor: muiTheme.palette.error.main,  // Apply error color dynamically
+              backgroundColor: muiTheme.palette.error.main, 
               '&:hover': {
-                backgroundColor: muiTheme.palette.error.dark, // Darken on hover
+                backgroundColor: muiTheme.palette.error.dark,
               },
             }}
           >
